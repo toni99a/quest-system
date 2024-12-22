@@ -13,7 +13,7 @@ func _enter_tree() -> void:
 
 	# Override default autoload script path
 	var autoload_path: String = QuestSystemSettings.get_config_setting("autoload_script_path", "quest_manager.gd")
-	if autoload_path != "quest_manager.gd" and autoload_path != _get_plugin_path() + "/quest_manager.gd":
+	if autoload_path != "quest_manager.gd" and autoload_path != _get_plugin_path() + "/quest_manager.gd" and autoload_path != "/csharp/QuestManagerApi.cs" and autoload_path != _get_plugin_path() + "/csharp/QuestManagerApi.cs":
 		if ResourceLoader.exists(autoload_path):
 			var autoload = load(autoload_path).new()
 			if autoload == null or not autoload is QuestSystemManagerAPI:
